@@ -1,16 +1,15 @@
-
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
 
 const main = async () => {
-  const transactionsFactory = await hre.ethers.getContractFactory("Transactions");
-  const transactionsContract = await transactionsFactory.deploy({ value: hre.ethers.utils.parseEther("0.001") });
+  const transactionsFactory = await ethers.getContractFactory("Transactions");
+  const transactionsContract = await transactionsFactory.deploy();
 
   await transactionsContract.deployed();
 
-  console.log("Transactions address: ", transactionsContract.address)
+  console.log("Transactions address: ", transactionsContract.address);
 };
 
-const runMain = () => {
+const runMain = async () => {
   try {
     await main();
     process.exit(0);
@@ -18,6 +17,6 @@ const runMain = () => {
     console.error(error);
     process.exit(1);
   }
-}
+};
 
-runMain()
+runMain();
