@@ -76,7 +76,7 @@ export const TransactionProvider = ({ children }) => {
 
       const { addressTo, amount, keyword, message } = formData;
       const transactionContract = getEthereumContract();
-      const parsedAmount = ethers.utils.parsedEther(amount);
+      const parsedAmount = ethers.utils.parseEther(amount);
 
       await ethereum.request({
         method: "eth_sendTransaction",
