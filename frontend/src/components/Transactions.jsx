@@ -35,6 +35,16 @@ const TransactionCard = ({
               From: {shortenAddress(addressFrom)}
             </p>
           </a>
+          <a
+            href={`https://goerli.etherscan.io/address/${addressTo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className="text-white text-base">
+              To: {shortenAddress(addressTo)}
+            </p>
+          </a>
+          <p className="text-white text-base">Amount: {amount} ETH</p>
         </div>
       </div>
     </div>
