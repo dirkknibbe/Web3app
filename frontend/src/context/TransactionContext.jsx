@@ -60,7 +60,7 @@ export const TransactionProvider = ({ children }) => {
 
       setTransactions(structuredTransactions);
 
-      console.log(structuredTransactions);
+      // console.log(structuredTransactions);
     } catch (error) {
       console.log(error);
     }
